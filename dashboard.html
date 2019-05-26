@@ -3,10 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <title>Dashboard</title>
+<link rel="stylesheet" href="dashboardstyle.css"/>
 </head>
 
 <body>
-put dashboard here ...
+    <p id="title" style="text-align: center">Light Switchboard</p>
+
+    <ul class="flex-container">
+      
+      <div class="flex-item">
+        <p id="light-label">1</p>
+        <li class="circle" id="light-1"></li>
+        <button type="button" class="button red"
+    onclick="document.getElementById('light-1').style.backgroundColor = 'rgb(255, 0, 0)'">
+    Red Switch</button>
+        <button type="button" class="button green"
+    onclick="document.getElementById('light-1').style.backgroundColor = 'rgb(51, 255, 51)'">
+    Green Switch</button>
+      </div>
+      
+      <div class="flex-item">
+        <p id="light-label">2</p>
+        <li class="circle" id="light-2"></li>
+        <button type="button" class="button red"
+    onclick="document.getElementById('light-2').style.backgroundColor = 'rgb(255, 0, 0)'">
+    Red Switch</button>
+        <button type="button" class="button green"
+    onclick="document.getElementById('light-2').style.backgroundColor = 'rgb(51, 255, 51)'">
+    Green Switch</button>
+      </div>
+      
+      <div class="flex-item">
+        <p id="light-label">3</p>
+        <li class="circle" id="light-3"></li>
+        <button type="button" class="button red"
+    onclick="document.getElementById('light-3').style.backgroundColor = 'rgb(255, 0, 0)'">
+    Red Switch</button>
+        <button type="button" class="button green"
+    onclick="document.getElementById('light-3').style.backgroundColor = 'rgb(51, 255, 51)'">
+    Green Switch</button>
+      </div>
+      
+    </ul>
+    
+    
 </body>
 
 </html>

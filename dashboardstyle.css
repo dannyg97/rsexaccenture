@@ -1,3 +1,74 @@
 /*
 css for dashboard
 */
+
+@import "compass/css3";
+
+#title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}
+
+#light-label {
+  margin: 5px;
+  margin-bottom: 10px;
+  padding-bottom: 0px;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+/*   padding-bottom: 10%; distance btwn buttons and bottom of flex-item */
+}
+
+.flex-container {
+  border-style: solid;
+  border-width: 2px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+/*   background-color: blue; */
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+  /*line-height: 1.25;*/ /* distance btwn light-label and light*/
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: red;
+  margin: 0 auto; /*center the circle*/
+ }
+
+.button {
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.green {
+  border-color: rgb(51, 255, 51);
+}
+
+.red {
+  border-color: rgb(255, 51, 51);
+}
+
