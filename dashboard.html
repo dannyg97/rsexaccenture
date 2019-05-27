@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Dashboard</title>
-<link rel="stylesheet" href="dashboardstyle.css"/>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboardstyle.css"/>
+    <script src="dashboardscript.js"></script>
 </head>
 
 <body>
     <p id="title" style="text-align: center">Light Switchboard</p>
 
     <ul class="flex-container">
-      
-      <div class="flex-item">
+        
+        <div class="flex-item">
         <p id="light-label">1</p>
         <li class="circle" id="light-1"></li>
-        <button type="button" class="button red"
-    onclick="document.getElementById('light-1').style.backgroundColor = 'rgb(255, 0, 0)'">
+        <button type="button" class="button red" onclick="activeRed('light-1')">
     Red Switch</button>
-        <button type="button" class="button green"
-    onclick="document.getElementById('light-1').style.backgroundColor = 'rgb(51, 255, 51)'">
+        <button type="button" class="button green" onclick="activeGreen('light-1')">
     Green Switch</button>
-      </div>
-      
-      <div class="flex-item">
+        </div>
+        
+        <div class="flex-item">
         <p id="light-label">2</p>
         <li class="circle" id="light-2"></li>
-        <button type="button" class="button red"
-    onclick="document.getElementById('light-2').style.backgroundColor = 'rgb(255, 0, 0)'">
+        <button type="button" class="button red" onclick="activeRed('light-2')">
     Red Switch</button>
-        <button type="button" class="button green"
-    onclick="document.getElementById('light-2').style.backgroundColor = 'rgb(51, 255, 51)'">
+        <button type="button" class="button green" onclick="activeGreen('light-2')">
     Green Switch</button>
-      </div>
-      
-      <div class="flex-item">
+        </div>
+        
+        <div class="flex-item">
         <p id="light-label">3</p>
         <li class="circle" id="light-3"></li>
-        <button type="button" class="button red"
-    onclick="document.getElementById('light-3').style.backgroundColor = 'rgb(255, 0, 0)'">
+        <button type="button" class="button red" onclick="activeRed('light-3')">
     Red Switch</button>
-        <button type="button" class="button green"
-    onclick="document.getElementById('light-3').style.backgroundColor = 'rgb(51, 255, 51)'">
+        <button type="button" class="button green" onclick="activeGreen('light-3')">
     Green Switch</button>
-      </div>
-      
+        </div>
+        
     </ul>
-    
-    
+
 </body>
 
 </html>
