@@ -10,8 +10,8 @@ cap = cv2.VideoCapture(1)
 while(True):
     # Capture frame-by-frame
     ret, frame = cap.read()
-    #operations on the frame
     
+    #operations on the frame
     # colourspace rgb -> hsv
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     
@@ -19,26 +19,26 @@ while(True):
     lower_red = np.array([150,100,100], dtype=np.uint8)
     upper_red = np.array([200, 255, 255], dtype=np.uint8)
     
-    lower_grn = np.array([36,0,150], dtype=np.uint8)
+    lower_grn = np.array([35,0,150], dtype=np.uint8)
     upper_grn = np.array([70, 255, 175], dtype=np.uint8)
     
     mask1 = cv2.inRange(hsv, lower_red, upper_red)
     mask2 = cv2.inRange(hsv, lower_grn, upper_grn)
 
-    #cv2.imshow('rgb',frame)
-    cv2.imshow('red', mask1)
-    #cv2.imshow('green', mask2)
+    cv2.imshow('rgb',frame)
+    #cv2.imshow('red', mask1)
+    cv2.imshow('green', mask2)
     
     target = cv2.bitwise_or(mask1, mask2)
     #cv2.imshow('or', target)
     
-    blur = cv2.blur(target, (20, 20))
+    blur = cv2.blur(target, (25, 25))
     
     # read on bitwise
     circles = cv2.HoughCircles(blur,cv2.HOUGH_GRADIENT,1,100,
-                               param1=50,param2=30,minRadius=30,maxRadius=100)
+                               param1=50,param2=30,minRadius=20,maxRadius=60)
                             
-    output = cv2.cvtColor(target, cv2.COLOR_GRAY2RGB)
+    output = cv2.cvtColor(blur, cv2.COLOR_GRAY2RGB)
     if circles is not None:
         print ("num circles found is", len(circles[0,:]))
         for i in circles[0,:]:
