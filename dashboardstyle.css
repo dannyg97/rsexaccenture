@@ -1,13 +1,6 @@
-@import "compass/css3";
-
-body {
-  background-color: black;
-}
-
 #title {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
-  color: white;
 }
 
 #light-label {
@@ -16,15 +9,13 @@ body {
   padding-bottom: 10px;
   font-size: 40px;
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
-/*   padding-bottom: -10%; distance btwn buttons and bottom of flex-item */
 }
 
-/* https://codepen.io/team/css-tricks/pen/EKEYob */
+/* Source: https://codepen.io/team/css-tricks/pen/EKEYob */
 .flex-container {
   border-style: solid;
   border-width: 1px;
-  border-color: white;
+  border-color: black;
   padding: 15px;
   padding-bottom: 30px;
   margin: 50px;
@@ -59,9 +50,10 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: red;
+  background-color: #00ff00;
   margin: 0 auto; /*center the circle*/
-  box-shadow: 0 0px 70px red;
+  box-shadow: 0 0px 20px #00ff00a6;
+  margin-bottom:10px; /*Distance between circle and button*/
  }
 
 .button {
@@ -77,3 +69,53 @@ body {
   border-color: rgb(255, 51, 51);
 }
 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  margin-left: 0px;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+.modal-header {
+  padding: 1px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+ 	
+.modal-body {padding: 15px 16px;}
