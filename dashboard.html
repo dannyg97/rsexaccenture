@@ -1,46 +1,158 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboardstyle.css"/>
-    <script src="dashboardscript.js"></script>
-</head>
-
-<body>
-    <p id="title" style="text-align: center">Light Switchboard</p>
-
-    <ul class="flex-container">
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Switchboard Signal Processing Controller</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         
-        <div class="flex-item">
-        <p id="light-label">1</p>
-        <li class="circle" id="light-1"></li>
-        <button type="button" class="button red" onclick="activeRed('light-1')">
-    Red Switch</button>
-        <button type="button" class="button green" onclick="activeGreen('light-1')">
-    Green Switch</button>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+        <link rel="shortcut icon" href="/en-US/static/@804898D7015B51714957201764690E9A83345D0F3171680A1ACC5E6E79A72943.3159/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="{{SPLUNKWEB_URL_PREFIX}}/static/build/css/bootstrap-enterprise.css" />
+        <link rel="stylesheet" type="text/css" href="{{SPLUNKWEB_URL_PREFIX}}/static/build/css/splunkjs-dashboard.css" />
+
+        <!-- Custom Style -->
+        <link rel="stylesheet" type="text/css" href="{{SPLUNKWEB_URL_PREFIX}}/static/app/search/html_template/css/custom.css"></link> 
+
+        <!-- For Imports -->
+        <script src="{{SPLUNKWEB_URL_PREFIX}}/static/js/i18n.js"></script>
+
+        <!-- Custom JS -->
+        <script type="text/javascript" src="{{SPLUNKWEB_URL_PREFIX}}/static/app/search/html_template/js/custom.js"></script>
+
+
+        <!-- Splunk Stuff -->
+        <script src="{{SPLUNKWEB_URL_PREFIX}}/config?autoload=1" crossorigin="use-credentials"></script>
+        <script src="{{SPLUNKWEB_URL_PREFIX}}/i18ncatalog?autoload=1"></script>
+        <script src="{{SPLUNKWEB_URL_PREFIX}}/static/build/simplexml/index.js"></script>
+        <script type="text/javascript" src="{{SPLUNKWEB_URL_PREFIX}}/static/app/search/html_template/js/splunk.js"></script>
+
+            <meta name="referrer" content="never" />
+            <meta name="referrer" content="no-referrer" />
+        
+              <script>
+                    window._splunk_metrics_events = {
+                       push : function() {},
+                       active: false,
+                       }
+              </script>
+        </head>
+    <body class="simplexml preload locale-en" data-splunk-version="7.1.3" data-splunk-product="enterprise">
+
+        <header>
+            <a aria-label="Screen reader users, click here to skip the navigation bar" class="navSkip" href="#navSkip" tabIndex="1">Skip Navigation &gt;</a>
+            <div class="header splunk-header">
+                    <div id="placeholder-splunk-bar">
+                        <a href="{{SPLUNKWEB_URL_PREFIX}}/app/launcher/home" class="brand" title="splunk &gt; listen to your data">splunk<strong>&gt;</strong></a>
+                    </div>
+                        <div id="placeholder-app-bar"></div>
+            </div>
+            <a id="navSkip"></a>
+        </header>
+      
+
+        <!-- The Modal -->
+        <div id="modal-1" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Confirm LED1 switch</h2>
+            </div>
+            <div class="modal-body">
+              <p>Please confirm that you are changing <b>LED1's</b> status from <span style="color:red">red</span> to <span style="color:green">green</span>.</p>
+              <p>Or click anywhere anywhere to dismiss...</p>
+              <button type="button" class="button closemodal">Cancel</button>
+              <button type="button" class="button closemodal green" onclick="activeGreen('light-1')">Confirm</button>
+            </div>
+          </div>
         </div>
-        
-        <div class="flex-item">
-        <p id="light-label">2</p>
-        <li class="circle" id="light-2"></li>
-        <button type="button" class="button red" onclick="activeRed('light-2')">
-    Red Switch</button>
-        <button type="button" class="button green" onclick="activeGreen('light-2')">
-    Green Switch</button>
-        </div>
-        
-        <div class="flex-item">
-        <p id="light-label">3</p>
-        <li class="circle" id="light-3"></li>
-        <button type="button" class="button red" onclick="activeRed('light-3')">
-    Red Switch</button>
-        <button type="button" class="button green" onclick="activeGreen('light-3')">
-    Green Switch</button>
-        </div>
-        
-    </ul>
 
-</body>
+        <!-- The Modal -->
+        <div id="modal-2" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Confirm LED2 switch</h2>
+            </div>
+            <div class="modal-body">
+              <p>Please confirm that you are changing <b>LED2's</b> status from <span style="color:red">red</span> to <span style="color:green">green</span>.</p>
+              <p>Or click anywhere anywhere to dismiss...</p>
+              <button type="button" class="button closemodal">Cancel</button>
+              <button type="button" class="button closemodal green" onclick="activeGreen('light-2')">Confirm</button>
+            </div>
+          </div>
+        </div>
 
+        <!-- The Modal -->
+        <div id="modal-3" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Confirm LED3 switch</h2>
+            </div>
+            <div class="modal-body">
+              <p>Please confirm that you are changing LED3's status from <span style="color:red">red</span> to <span style="color:green">green</span>.</p>
+              <p>Or click anywhere anywhere to dismiss...</p>
+              <button type="button" class="button closemodal">Cancel</button>
+              <button type="button" class="button closemodal green" onclick="activeGreen('light-3')">Confirm</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-body container-fluid main-section-body" data-role="main">
+            <div class="dashboard-header clearfix">
+                <h2 style="text-align:center">Switchboard Signal Processing Controller</h2>
+            </div>
+          
+            <ul class="flex-container">
+                <div class="flex-item">
+                <p id="light-label">LED1</p>
+                <li class="circle" id="light-1"></li>
+                <button type="button" class="button green" onclick="openModal('modal-1')">Reset</button>
+                </div>
+                
+                <div class="flex-item">
+                <p id="light-label">LED2</p>
+                <li class="circle" id="light-2"></li>
+                <button type="button" class="button green" onclick="openModal('modal-2')">Reset</button>
+                </div>
+                
+                <div class="flex-item">
+                <p id="light-label">LED3</p>
+                <li class="circle" id="light-3"></li>
+                <!-- Button trigger modal -->
+                <button type="button" class="button green" onclick="openModal('modal-3')">Reset</button>
+                </div>
+            </ul>
+
+            <div id="row1" class="dashboard-row dashboard-row1">
+                <div id="panel1" class="dashboard-cell" style="width: 50%;">
+                    <div class="dashboard-panel clearfix">
+                        <!--<h2 class="panel-title">Example Panel</h2>-->
+                        
+                        <div class="panel-element-row">
+                            <div id="element1" class="dashboard-element table" style="width: 100%">
+                                <div class="panel-head">
+                                    <h3>LED Table (Real-time)</h3>
+                                </div>
+                                <p id="ledOutput"></p>
+                                <div class="panel-body"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+          
+        </div>        
+    </body>
 </html>
